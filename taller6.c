@@ -1,12 +1,17 @@
 #include <stdio.h>
 
 void desglosar(char *fecha);
-void intercambiar(int a, int b);
+void intercambiar(int *a, int *b);
 int direccion(int *arreglo[]);
 
 int main(void){
+	int a=2;
+	int b=3;
 	char *fecha= "2017-06-06";
 	desglosar(fecha);
+	intercambiar(&a,&b);
+	printf("%d\n",a);
+	printf("%d\n",b);
 }
 
 void desglosar(char *fecha){
@@ -16,9 +21,12 @@ void desglosar(char *fecha){
 
 }
 
-void intercambiar(int a, int b){
-	
+void intercambiar(int *a, int *b){
+	int tem = *a;
+	*a = *b;
+	*b = tem;
 }
+	
 
 int direccion(int *arreglo[]){
 	return 0;
