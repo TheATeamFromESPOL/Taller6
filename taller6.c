@@ -2,7 +2,7 @@
 
 void desglosar(char *fecha);
 void intercambiar(int *a, int *b);
-int *direccion(int *arreglo[]);
+int *direccion(int *arregloEnteros,int numero,int tamanio);
 
 int main(void){
 	int a=2;
@@ -12,9 +12,9 @@ int main(void){
 	intercambiar(&a,&b);
 	printf("%d\n",a);
 	printf("%d\n",b);
-	int sad = 351;
-	int* p= direccion(x,
-
+	int numeros[5] = {10,30,21,17,23};
+	int *p = direccion(numeros,17,5);
+	printf("Direccion del elemento %p\n",p);
 }
 
 void desglosar(char *fecha){
@@ -29,13 +29,13 @@ void intercambiar(int *a, int *b){
 	*a = *b;
 	*b = tem;
 }
-	
-int *direccion(int *x,int j,tamano){
-	for(int i=0;i<tamano;i++){
-		if(*(x+i)==elem){
-			printf("Direccion del elemento %x\n",x);
-			return x;
+
+int *direccion(int *arregloEnteros,int numero,int tamanio){
+	int *dir = NULL;
+	for(int i=0;i<tamanio;i++){
+		if(*(arregloEnteros+i)==numero){
+			*dir = *arregloEnteros+i;
 		}
 	}
-	return -1;
+	return dir;
 }
