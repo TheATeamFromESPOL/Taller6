@@ -31,11 +31,10 @@ void intercambiar(int *a, int *b){
 }
 
 int *direccion(int *arregloEnteros,int numero,int tamanio){
-	int *dir = NULL;
 	for(int i=0;i<tamanio;i++){
-		if(*(arregloEnteros+i)==numero){
-			*dir = *arregloEnteros+i;
+		if(*(arregloEnteros + i)==numero){
+			int *dir = arregloEnteros + i;
+			return dir;
 		}
 	}
-	return dir;
 }
